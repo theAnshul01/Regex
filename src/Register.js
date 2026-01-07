@@ -52,6 +52,10 @@ const Register = () => {
 
   const url = "http://localhost:3500/users";
 
+  
+
+  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -69,7 +73,18 @@ const Register = () => {
       if (response.ok) setSuccess(true);
 
       const data = await response.json()
-      console.log(data);
+      // console.log(data);
+
+      if (!localStorage.getItem("userRe")) {
+        localStorage.setItem("userRe", JSON.stringify({
+          username: userName,
+          email: email,
+          password: pwd
+        } || []))
+      }
+
+      console.log(localStorage.getItem("userRe"));
+
     } catch (error) {
       console.log(error.message)
       setError(true);

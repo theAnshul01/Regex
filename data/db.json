@@ -65,6 +65,24 @@
       "username": "fakeuser",
       "email": "fake@email.com",
       "password": "Qwerty@123"
+    },
+    {
+      "id": "b9c4",
+      "username": "anshul",
+      "email": "fake@email.com",
+      "password": "Qwerty@123"
+    },
+    {
+      "id": "e8f2",
+      "username": "fakeuser",
+      "email": "fake@email.com",
+      "password": "Qwerty@123"
+    },
+    {
+      "id": "51cf",
+      "username": "fake1",
+      "email": "fake1@email.com",
+      "password": "Qwerty@123"
     }
   ]
 }
