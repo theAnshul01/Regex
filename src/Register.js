@@ -50,41 +50,18 @@ const Register = () => {
     setValidMatch(pwd === matchPwd);
   }, [pwd, matchPwd])
 
-  const url = "http://localhost:3500/users";
-
-  
-
-  
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          username: userName,
-          email: email,
-          password: pwd
-        })
-      })
-      if (response.ok) setSuccess(true);
-
-      const data = await response.json()
-      // console.log(data);
-
-      if (!localStorage.getItem("userRe")) {
-        localStorage.setItem("userRe", JSON.stringify({
-          username: userName,
-          email: email,
-          password: pwd
-        } || []))
+      const user = {
+        username: userName,
+        email: email,
+        password: pwd
       }
-
-      console.log(localStorage.getItem("userRe"));
-
+      if (!localStorage.getItem("userRe")) {
+        localStorage.setItem("userRe", JSON.stringify(user || []));
+      }
+      setSuccess(true);
     } catch (error) {
       console.log(error.message)
       setError(true);
@@ -129,7 +106,7 @@ const Register = () => {
           {success ?
             (<>
               <h3 className="alert alert-success alert-dismissible text-center container">Registration Successful!</h3>
-              <Link to="/">Move back to sign in</Link>
+              <Link className="text-center" to="/">Move back to sign in</Link>
             </>)
             :
             (
