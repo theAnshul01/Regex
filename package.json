@@ -4,13 +4,10 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
-    "@fortawesome/free-brands-svg-icons": "^7.1.0",
-    "@fortawesome/free-regular-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
-    "json-server": "^1.0.0-beta.3",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "react-router-dom": "^7.11.0",
@@ -20,8 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "json-server" : "json-server -p 3500 -w data/db.json"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

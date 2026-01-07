@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Regex
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small React tutorial project demonstrating form validation using regular expressions (Regex). This app includes a registration form with real-time validation for username, email, and password and saves the registered user to `localStorage`.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- Form validation using regular expressions:
+  - Username: must start with a letter and be 4–24 chars (letters, numbers, `_` and `-` allowed)
+  - Email: simple validation ensuring characters before/after `@` and a domain after `.`
+  - Password: 8–24 chars, mixed case, at least one number and one special character from `!#@%$`
+- Real-time UI feedback with icons and helper messages
+- Uses `localStorage` to save a single registered user under the `userRe` key
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🗂 Project Structure
 
-### `npm test`
+```
+public/
+  index.html
+src/
+  App.js        // app entry, renders <Register />
+  Register.js   // registration form with regex validation
+  index.js      // bootstraps the app and Router
+  index.css
+package.json
+README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React
+- Bootstrap (CSS & JS)
+- react-router-dom
+- Font Awesome (icons)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧭 Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js (>= 14) and npm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repo:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+git clone https://github.com/theAnshul01/Regex.git
+cd Regex
+```
 
-## Learn More
+2. Install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Run the app locally:
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Open http://localhost:3000 in your browser.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🧪 Usage
 
-### Making a Progressive Web App
+- Visit the app and fill out the **Register** form.
+- The Submit button is enabled only when all fields pass validation.
+- On successful registration the user object is stored in `localStorage` under the key `userRe`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Example stored object:
 
-### Advanced Configuration
+```json
+{
+  "username": "exampleUser",
+  "email": "user@example.com",
+  "password": "EncryptedOrPlainTextHere"
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> Note: This tutorial stores the raw value for demonstration purposes — do not store plaintext passwords in production.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔧 Regex (validation) used
 
-### `npm run build` fails to minify
+- `USER_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{3,23}$/`
+- `PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#@%$]).{8,24}$/`
+- `EMAIL_REGEX = /^([a-zA-Z0-9])([a-zA-Z0-9.])*@([a-zA-Z])+\.([a-zA-Z]){2,}$/`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🤝 Contributing
+
+Contributions are welcome — open an issue or submit a pull request.
+
+---
+
+## 📝 License
+
+This project is provided as-is for tutorial purposes. You can apply an MIT license or another license per repository owner preference.
+
+---
+
