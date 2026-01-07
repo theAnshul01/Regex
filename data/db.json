@@ -53,6 +53,18 @@
       "username": "user",
       "email": "user12@g.com",
       "password": "Qwerty@123"
+    },
+    {
+      "id": "ebfa",
+      "username": "user12",
+      "email": "user@gamil.com",
+      "password": "Qwerty@123"
+    },
+    {
+      "id": "381e",
+      "username": "fakeuser",
+      "email": "fake@email.com",
+      "password": "Qwerty@123"
     }
   ]
 }
